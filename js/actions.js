@@ -2,11 +2,9 @@ function setRow(type, ...a) {
     
     let output = '<tr>';
     
-    if (type === 0) {
-        for (let i=0; i<a.length; i++) { output += '<th class="col'+i+'">'+a[i]+'</th>'; }
-    } else {
-        for (let i=0; i<a.length; i++) { output += '<td class="col'+i+'">'+a[i]+'</td>'; }
-    }
+    a.map(function (x, i) { 
+        output += '<t'+( type ? "d" : "h" )+' class="col'+i+'">'+x+'</th>';
+    });
     
     output += '</tr>';
     
