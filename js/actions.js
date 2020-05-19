@@ -1,11 +1,9 @@
 function setRow(type, ...a) {
     
     let output = '<tr>';
-    
     a.map(function (x, i) { 
-        output += '<t'+( type ? "d" : "h" )+' class="col'+i+'">'+x+'</th>';
+        output += '<t'+( type ? "d" : "h" )+' class="col'+i+'">'+x+'</t'+( type ? "d" : "h" )+'>';
     });
-    
     output += '</tr>';
     
     return output;
