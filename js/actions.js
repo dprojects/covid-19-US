@@ -15,16 +15,15 @@ function showData(path) {
     .then(data => {
         
         let aData = data.split('\n');
-        let aKeys = aData.length-2;
         
         let output = '<table id="covid-table" class="display">';
+                output += '<thead>';
+                output += setRow(0, 'Place', 'Confirmed', 'Infected %', 'Deaths', 
+                                 'Deaths %', 'Recovered', 'Recovered %');
+                output += '</thead>';
+            output += '</tbody>';
         
-        output += '<thead>';
-        output += setRow(0, 'Place', 'Confirmed', 'Infected %', 'Deaths', 'Deaths %', 'Recovered', 'Recovered %');
-        output += '</thead>';
-        
-        output += '</tbody>';
-        for (let k=1; k < aKeys; k++) {
+        for (let k=1; k < aData.length-1; k++) {
             
             let row = aData[k].split(',');
             
